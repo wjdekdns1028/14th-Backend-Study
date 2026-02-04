@@ -85,3 +85,8 @@ spotless {
 
 // build 시 spotlessApply 자동 실행
 build.dependsOn 'spotlessApply'
+
+bootRun {
+    String activeProfile = System.properties['spring.profiles.active']
+    systemProperty "spring.profiles.active", activeProfile
+}
